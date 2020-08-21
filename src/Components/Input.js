@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FaBook } from 'react-icons/fa'
 class Input extends Component {
     render() {
-        const { handleSubmit, item, handleChange } = this.props;
+        const { handleSubmit, item, handleChange ,editItem} = this.props;
         return (
             <div className="card card-body my-3">
                 <form onSubmit={handleSubmit}>
@@ -21,8 +21,8 @@ class Input extends Component {
                     </div>
                     <button type="submit"
                         disabled= { item ? false : true}
-                        className="btn btn-block btn-success mt-3">
-                        add ME
+                        className={editItem ? "btn btn-block btn-success mt-3" : "btn btn-block btn-primary mt-3 text-uppercase"}>
+                        {editItem ? 'Edit Me' : "Add Me"}
                     </button>
                 </form>
             </div>
